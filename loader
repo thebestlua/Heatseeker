@@ -406,3 +406,24 @@ UIS.InputBegan:Connect(function(input)
     script.Parent.Parent.Parent.Parent.Visible = not script.Parent.Parent.Parent.Parent.Visible
   end 
 end)
+
+
+
+
+-- // Whitelist Stuff (DONT TAMPER)
+local textChatService = game:GetService("TextChatService")
+textChatService.OnIncomingMessage = function(message:TextChatMessage)
+	local properties = Instance.new("TextChatMessageProperties")
+	
+	if message.TextSource then
+		local player = game:GetService("Players"):GetPlayerByUserId(message.Text)
+		
+		local whitelisted = {""}
+		for i,v in pairs(whitelisted) do
+			if player[i] == whitelisted then
+					properties.PrefixText = "<font color'#9A9AEB'>[Heatseeker Owner]</font>"
+				
+			end
+		end
+	end
+end
