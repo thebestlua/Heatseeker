@@ -293,8 +293,8 @@ local function loadUnInjectGui()
     UnInjectButton.TextWrapped = true
 end    
 
-local function createNotification2(text, duration)
-    duration = 5
+local function createNotification2(text)
+
     Notification2.Name = "Notification2"
     Notification2.Parent = GuiHolder
     Notification2.BackgroundColor3 = Color3.new(1, 1, 1)
@@ -383,6 +383,7 @@ if heatseekerinjected == false then
     heatseekerinjected = true
     createWaterMark()
     createBlatantTab()
+    loadUnInjectGui()
     createNotification3("Loaded Heatseeker Client in "..tick)
 end
 
@@ -422,7 +423,7 @@ textChatService.OnIncomingMessage = function(message:TextChatMessage)
 		local player = game:GetService("Players"):GetPlayerByUserId(message.Text)
 		
 		if player.Name == "vermsquad4" then
-properties.PrefixText = "<font color'#9A9AEB'>[Heatseeker Owner]</font>"
+properties.PrefixText = "<font color'#9A9AEB'>[HEATSEEKER OWNER (mike is my daddy)]</font>"
         end    
-    end
+	end
 end
