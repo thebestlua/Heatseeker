@@ -23,7 +23,7 @@ local TabName_Blatant = Instance.new("TextLabel")
 local UICorner_2 = Instance.new("UICorner")
 local UnInjectButton = Instance.new("TextButton")
 local GuiHolder = Instance.new("ScreenGui")
-GuiHolder.Parent = StarterGui
+GuiHolder.Parent = PlayerGui
 local BlatantTab = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local MainTab = Instance.new("Frame")
@@ -396,6 +396,9 @@ if isfolder("heatseeker/assets") == false then
    makefolder("heatseeker/assets")
 end    
 
+if isfolder("heatseeker/scripts") == false then
+   makefolder("heatseeker/scripts")
+end    
 
 
 
@@ -418,12 +421,8 @@ textChatService.OnIncomingMessage = function(message:TextChatMessage)
 	if message.TextSource then
 		local player = game:GetService("Players"):GetPlayerByUserId(message.Text)
 		
-		local whitelisted = {"noanticheatv5"}
-		for i,v in pairs(whitelisted) do
-			if player[i] == whitelisted then
-					properties.PrefixText = "<font color'#9A9AEB'>[Heatseeker Owner]</font>"
-				
-			end
-		end
-	end
+		if player.Name == "vermsquad4" then
+properties.PrefixText = "<font color'#9A9AEB'>[Heatseeker Owner]</font>"
+        end    
+    end
 end
