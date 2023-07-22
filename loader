@@ -11,7 +11,7 @@ local heatseekeroptions = {
 }
 local heatseekerinjected = false
 local PlayerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-local StarterGui = game:GetService("StarterGui")
+local StarterGui = game.StarterGui
 local lplr = game:GetService("Players").LocalPlayer
 local Entity = lplr.Character
 local UIS = game:GetService("UserInputService")
@@ -22,7 +22,8 @@ local UnInject = Instance.new("Frame")
 local TabName_Blatant = Instance.new("TextLabel")
 local UICorner_2 = Instance.new("UICorner")
 local UnInjectButton = Instance.new("TextButton")
-
+local GuiHolder = Instance.new("ScreenGui")
+GuiHolder.Parent = StarterGui
 local BlatantTab = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local MainTab = Instance.new("Frame")
@@ -105,7 +106,7 @@ end
 local function createNotification1(text, duration)
     duration = 5
     Notification1.Name = "Notification1"
-Notification1.Parent = PlayerGui
+Notification1.Parent = GuiHolder
 Notification1.BackgroundColor3 = Color3.new(1, 1, 1)
 Notification1.BorderColor3 = Color3.new(0, 0, 0)
 Notification1.BorderSizePixel = 0
@@ -146,7 +147,7 @@ end
 
 local function createBlatantTab()
     BlatantTab.Name = "BlatantTab"
-    BlatantTab.Parent = PlayerGui
+    BlatantTab.Parent = GuiHolder
     BlatantTab.BackgroundColor3 = Color3.new(0, 0, 0)
     BlatantTab.BorderColor3 = Color3.new(0, 0, 0)
     BlatantTab.BorderSizePixel = 0
@@ -244,7 +245,7 @@ local function loadUnInjectGui()
     
    
     UnInjectTab.Name = "UnInjectTab"
-    UnInjectTab.Parent = PlayerGui
+    UnInjectTab.Parent = GuiHolder
     UnInjectTab.BackgroundColor3 = Color3.new(0, 0, 0)
     UnInjectTab.BorderColor3 = Color3.new(0, 0, 0)
     UnInjectTab.BorderSizePixel = 0
@@ -261,7 +262,7 @@ local function loadUnInjectGui()
     UnInject.Position = UDim2.new(0.0538370684, 0, 0.0574349016, 0)
     UnInject.Size = UDim2.new(0, 92, 0, 98)
     
-    TabName_UnInject.Name = "TabName_UnInjcet"
+    TabName_UnInject.Name = "TabName_UnInject"
     TabName_UnInject.Parent = UnInject
     TabName_UnInject.BackgroundColor3 = Color3.new(1, 1, 1)
     TabName_UnInject.BackgroundTransparency = 1
@@ -296,7 +297,7 @@ end
 local function createNotification2(text, duration)
     duration = 5
     Notification2.Name = "Notification2"
-    Notification2.Parent = PlayerGui
+    Notification2.Parent = GuiHolder
     Notification2.BackgroundColor3 = Color3.new(1, 1, 1)
     Notification2.BorderColor3 = Color3.new(0, 0, 0)
     Notification2.BorderSizePixel = 0
@@ -338,7 +339,7 @@ end
 local function createNotification3(text, duration) 
     duration = 5
     Notification3.Name = "Notification3"
-    Notification2.Parent = PlayerGui
+    Notification2.Parent = GuiHolder
     Notification2.BackgroundColor3 = Color3.new(1, 1, 1)
     Notification2.BorderColor3 = Color3.new(0, 0, 0)
     Notification2.BorderSizePixel = 0
@@ -418,7 +419,7 @@ textChatService.OnIncomingMessage = function(message:TextChatMessage)
 	if message.TextSource then
 		local player = game:GetService("Players"):GetPlayerByUserId(message.Text)
 		
-		local whitelisted = {""}
+		local whitelisted = {"noanticheatv5"}
 		for i,v in pairs(whitelisted) do
 			if player[i] == whitelisted then
 					properties.PrefixText = "<font color'#9A9AEB'>[Heatseeker Owner]</font>"
