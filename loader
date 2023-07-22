@@ -261,7 +261,6 @@ local function loadUnInjectGui()
     UnInject.BorderSizePixel = 0
     UnInject.Position = UDim2.new(0.0538370684, 0, 0.0574349016, 0)
     UnInject.Size = UDim2.new(0, 92, 0, 98)
-    
     TabName_UnInject.Name = "TabName_UnInject"
     TabName_UnInject.Parent = UnInject
     TabName_UnInject.BackgroundColor3 = Color3.new(1, 1, 1)
@@ -270,7 +269,7 @@ local function loadUnInjectGui()
     TabName_UnInject.BorderSizePixel = 0
     TabName_UnInject.Size = UDim2.new(0, 96, 0, 25)
     TabName_UnInject.Font = Enum.Font.Cartoon
-    TabName_UnInject.Text = "UnInject"
+
     TabName_UnInject.TextColor3 = Color3.new(0, 0, 0)
     TabName_UnInject.TextScaled = true
     TabName_UnInject.TextSize = 14
