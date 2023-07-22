@@ -36,8 +36,8 @@ local WatermarkStuff = Instance.new("Frame")
 local Version = Instance.new("TextLabel")
 local WatermarkName = Instance.new("TextLabel")
 local UICorner = Instance.new("UICorner")
-local testgui = Instance.new("ScreenGui", StarterGui)
-testgui.Parent = StarterGui
+local testgui = Instance.new("ScreenGui")
+testgui.Parent = PlayerGui
 local Notification1 = Instance.new("Frame")
 local Information = Instance.new("TextLabel")
 local TextLabel = Instance.new("TextLabel")
@@ -107,7 +107,7 @@ end
 local function createNotification1(text, duration)
     duration = 5
     Notification1.Name = "Notification1"
-Notification1.Parent = testgui
+Notification1.Parent = PlayerGui
 Notification1.BackgroundColor3 = Color3.new(1, 1, 1)
 Notification1.BorderColor3 = Color3.new(0, 0, 0)
 Notification1.BorderSizePixel = 0
@@ -148,7 +148,7 @@ end
 
 local function createBlatantTab()
     BlatantTab.Name = "BlatantTab"
-    BlatantTab.Parent = game.StarterGui.testgui
+    BlatantTab.Parent = PlayerGui
     BlatantTab.BackgroundColor3 = Color3.new(0, 0, 0)
     BlatantTab.BorderColor3 = Color3.new(0, 0, 0)
     BlatantTab.BorderSizePixel = 0
@@ -246,7 +246,7 @@ local function loadUnInjectGui()
     
    
     UnInjectTab.Name = "UnInjectTab"
-    UnInjectTab.Parent = game.StarterGui.testgui
+    UnInjectTab.Parent = PlayerGui
     UnInjectTab.BackgroundColor3 = Color3.new(0, 0, 0)
     UnInjectTab.BorderColor3 = Color3.new(0, 0, 0)
     UnInjectTab.BorderSizePixel = 0
@@ -298,7 +298,7 @@ end
 local function createNotification2(text, duration)
     duration = 5
     Notification2.Name = "Notification2"
-    Notification2.Parent = testgui
+    Notification2.Parent = PlayerGui
     Notification2.BackgroundColor3 = Color3.new(1, 1, 1)
     Notification2.BorderColor3 = Color3.new(0, 0, 0)
     Notification2.BorderSizePixel = 0
@@ -340,7 +340,7 @@ end
 local function createNotification3(text, duration) 
     duration = 5
     Notification3.Name = "Notification3"
-    Notification2.Parent = testgui
+    Notification2.Parent = PlayerGui
     Notification2.BackgroundColor3 = Color3.new(1, 1, 1)
     Notification2.BorderColor3 = Color3.new(0, 0, 0)
     Notification2.BorderSizePixel = 0
