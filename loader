@@ -383,7 +383,6 @@ if heatseekerinjected == false then
     heatseekerinjected = true
     createWaterMark()
     createBlatantTab()
-    loadUnInjectGui()
     createNotification3("Loaded Heatseeker Client in "..tick)
 end
 
