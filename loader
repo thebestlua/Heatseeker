@@ -1,4 +1,4 @@
--- 1st part of coding (not skidded actually made by me)
+
 local heatseekeroptions = {
     CustomText = "",
     Theme = "Rise Blend",
