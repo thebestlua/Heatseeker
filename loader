@@ -11,6 +11,7 @@ local heatseekeroptions = {
 }
 local heatseekerinjected = false
 local PlayerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+local StarterGui = game:GetService("StarterGui")
 local lplr = game:GetService("Players").LocalPlayer
 local Entity = lplr.Character
 local UIS = game:GetService("UserInputService")
@@ -35,7 +36,7 @@ local WatermarkStuff = Instance.new("Frame")
 local Version = Instance.new("TextLabel")
 local WatermarkName = Instance.new("TextLabel")
 local UICorner = Instance.new("UICorner")
-local testgui = Instance.new("ScreenGui", PlayerGui)
+local testgui = Instance.new("ScreenGui", StarterGui)
 local Notification1 = Instance.new("Frame")
 local Information = Instance.new("TextLabel")
 local TextLabel = Instance.new("TextLabel")
