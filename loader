@@ -261,15 +261,10 @@ local function loadUnInjectGui()
     UnInject.BorderSizePixel = 0
     UnInject.Position = UDim2.new(0.0538370684, 0, 0.0574349016, 0)
     UnInject.Size = UDim2.new(0, 92, 0, 98)
-    TabName_UnInject.Name = "TabName_UnInject"
-    TabName_UnInject.Parent = UnInject
-    TabName_UnInject.BackgroundColor3 = Color3.new(1, 1, 1)
-    TabName_UnInject.BackgroundTransparency = 1
-    TabName_UnInject.BorderColor3 = Color3.new(0, 0, 0)
     TabName_UnInject.BorderSizePixel = 0
     TabName_UnInject.Size = UDim2.new(0, 96, 0, 25)
     TabName_UnInject.Font = Enum.Font.Cartoon
-
+      
     TabName_UnInject.TextColor3 = Color3.new(0, 0, 0)
     TabName_UnInject.TextScaled = true
     TabName_UnInject.TextSize = 14
@@ -279,7 +274,7 @@ local function loadUnInjectGui()
     
     UnInjectButton.Name = "UnInjectButton"
     UnInjectButton.Parent = UnInject
-    UnInjectButton.BackgroundColor3 = Color3.new(1, 1, 1)
+
     UnInjectButton.BackgroundTransparency = 1
     UnInjectButton.BorderColor3 = Color3.new(0, 0, 0)
     UnInjectButton.BorderSizePixel = 0
@@ -415,15 +410,18 @@ end)
 
 
 -- // Whitelist Stuff (DONT TAMPER)
-local textChatService = game:GetService("TextChatService")
-textChatService.OnIncomingMessage = function(message:TextChatMessage)
+local TextChatService = game:GetService("TextChatService")
+local Players = game:GetService("Players")
+
+TextChatService.OnIncomingMessage = function(message: TextChatMessage)
 	local properties = Instance.new("TextChatMessageProperties")
-	
+
 	if message.TextSource then
-		local player = game:GetService("Players"):GetPlayerByUserId(message.Text)
-		
+		local player = Players:GetPlayerByUserId(message.TextSource.UserId)
 		if player.Name == "vermsquad4" then
-properties.PrefixText = "<font color'#9A9AEB'>[HEATSEEKER OWNER (mike is my daddy)]</font>"
-        end    
+			properties.PrefixText = "<font color='#FF4040'>[HEATSEEKER OWNER]</font> " .. message.PrefixText
+		end
 	end
+
+	return properties
 end
